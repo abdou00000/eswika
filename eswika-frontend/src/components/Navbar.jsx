@@ -34,6 +34,11 @@ const Navbar = () => {
                 Orders
               </Link>
             )}
+            {user && (
+              <Link to="/admin" className="px-3 py-2 rounded-md hover:bg-green-700">
+                Admin page
+              </Link>
+            )}
           </div>
 
           {/* Auth Links */}

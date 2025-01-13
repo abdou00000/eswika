@@ -30,3 +30,7 @@ A Postman collection is included in the backend folder of the project. You can u
 
 ## Models
 The database tables and their structure are defined in the models.py file. This file contains the schema and models used for the database.
+
+## Admin Credentials:
+email: admin@example.com
+pwd: admin123
