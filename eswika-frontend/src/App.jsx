@@ -7,11 +7,15 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
+import AddProduct from './pages/AddProduct';
+import MyProducts from './pages/MyProducts';
+import AdminPendingProducts  from './pages/AdminPendingProducts';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Admin from './pages/Admin';
 import Orders from './pages/Orders';
+import FarmerOrders from './pages/FarmerOrders';
 
 // Protected Route Component
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -53,6 +57,38 @@ function App() {
                 element={
                   <ProtectedRoute allowedRoles={['admin']}>
                     <Admin />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/validate" 
+                element={
+                  <ProtectedRoute allowedRoles={['admin']}>
+                    <AdminPendingProducts  />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/add-product" 
+                element={
+                  <ProtectedRoute allowedRoles={['farmer']}>
+                    <AddProduct />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/my-products"  
+                element={
+                  <ProtectedRoute allowedRoles={['farmer']}>
+                    <MyProducts />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/farmer-orders"  
+                element={
+                  <ProtectedRoute allowedRoles={['farmer']}>
+                    <FarmerOrders />
                   </ProtectedRoute>
                 } 
               />

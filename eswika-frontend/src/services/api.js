@@ -42,6 +42,7 @@ export const api = {
     const response = await axiosInstance.post('/login', credentials);
     if (response.data.token) {
       localStorage.setItem('token', response.data.token);
+      // localStorage.setItem('role', response.data.user_type.type);
     }
     return response;
   },

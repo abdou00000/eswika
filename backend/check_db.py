@@ -51,6 +51,19 @@ else:
     print("No data found in the User table.")
 
 print("################################################################")
+print("Cart TABLE:")
+print("################################################################")
+# Query data from the Cart table
+cursor.execute("SELECT * FROM Cart")
+rows = cursor.fetchall()
+
+if rows:
+    for row in rows:
+        print(row)
+else:
+    print("No data found in the Cart table.")
+
+print("################################################################")
 print("Admin TABLE:")
 print("################################################################")
 # Query data from the Admin table
@@ -63,6 +76,11 @@ if rows:
 else:
     print("No data found in the User table.")
 
+print("################################################################")
+
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+tables = cursor.fetchall()
+print("Tables:", tables)
 
 # Close the connection
 conn.close()
